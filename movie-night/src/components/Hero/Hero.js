@@ -55,7 +55,7 @@ const HeroSlide = () => {
   );
 };
 
-const HeroSlideItem = (props) => {
+const HeroSlideItem = props => {
   let navigate = useNavigate();
 
   const item = props.item;
