@@ -1,9 +1,12 @@
 import React from 'react';
+// import { Link } from 'react-router-dom';
+// import { OutlineButton } from '../components/Btn/Btn';
+import HeroSlide from '../components/Hero/Hero';
 
 const Home = () => {
     return (
         <div>
-            This is my Home
+            <HeroSlide/>
         </div>
     )
 }

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Btn.scss";
 
-const Button = (props) => {
+const Button = props => {
   return (
     <button
       className={`btn ${props.className}`}
