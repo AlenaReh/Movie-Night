@@ -4,27 +4,28 @@ import "./Btn.scss";
 
 const Button = props => {
   return (
-    <button
-      className={`btn ${props.className}`}
-      onClick={props.onClick ? () => props.onCLick() : null}
-    >
-      {props.children}
-    </button>
+      <button
+          className={`btn ${props.className}`}
+          onClick={props.onClick ? () => props.onClick() : null}
+      >
+          {props.children}
+      </button>
   );
-};
+}
 
 export const OutlineButton = props => {
-    return (
-        <Button
-        className={`btn-outline ${props.className}`}
-        onClick={props.onClick ? () => props.onClick() : null}>
-            {props.children}
-        </Button>
-    );
-};
+  return (
+      <Button
+          className={`btn-outline ${props.className}`}
+          onClick={props.onClick ? () => props.onClick() : null}
+      >
+          {props.children}
+      </Button>
+  );
+}
 
-Button.protoTypes = {
-  onClick: PropTypes.func,
-};
+Button.propTypes = {
+  onClick: PropTypes.func
+}
 
 export default Button;

@@ -6,7 +6,7 @@ import Button, { OutlineButton } from "../Btn/Btn";
 import Modal, { ModalContent } from "../Modal/Modal";
 import tmdbApi, { category, movieType } from "../../api/tmdbApi";
 import apiCall from "../../api/api";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const HeroSlide = () => {
   SwiperCore.use([Autoplay]);
@@ -57,6 +57,7 @@ const HeroSlide = () => {
 
 const HeroSlideItem = props => {
   let navigate = useNavigate();
+  console.log('******', navigate);
 
   const item = props.item;
 
@@ -68,9 +69,10 @@ const HeroSlideItem = props => {
     const modal = document.querySelector(`#modal_${item.id}`);
 
     const videos = await tmdbApi.getVideos(category.movie, item.id);
-
     if (videos.results.length > 0) {
       const videSrc = "https://www.youtube.com/embed/" + videos.results[0].key;
+      console.log('videos', videos.results);
+
       modal
         .querySelector(".modal__content > iframe")
         .setAttribute("src", videSrc);
@@ -107,7 +109,7 @@ const HeroSlideItem = props => {
   );
 };
 
-const TrailerModal = (props) => {
+const TrailerModal = props => {
   const item = props.item;
 
   const iframeRef = useRef(null);
